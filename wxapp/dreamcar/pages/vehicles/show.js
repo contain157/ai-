@@ -1,18 +1,29 @@
 // pages/vehicles/show.js
+// 全局的getapp函数拿到整个应用对象
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    design:[]
   },
-
+  
+  testDrive(){
+    wx.showToast({
+      title: '我们的工作人员会和您联系',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    // console.log(app.globalData);
+    // api data 数据修改 自动更新页面 MVVM
+    this.setData({
+      design:app.globalData.vehicles[0].meta.exterior_design
+    })
   },
 
   /**

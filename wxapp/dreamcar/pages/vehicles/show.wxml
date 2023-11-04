@@ -30,5 +30,31 @@
       </view>
     </view>
   </view>
-  <view class="action"></view>
+  <view class="action">
+    <view class="description">
+    世界顶级奢华SUV的极致巅峰
+    </view>
+    <button 
+    bindtap="testDrive"
+    class="button primary">预约试驾</button>
+  </view>
 </view>
+<swiper 
+indicator-dots="{{true}}"
+class="section story white">
+  <!-- block 不会出现在DOM , 承载指令的 -->
+  <block wx:for="{{design}}" wx:key="id">
+    <swiper-item>
+      <view class="content">
+        <view class="sub-header">外观</view>
+        <view class="header">{{item.header}}</view>
+        <view class="description">
+          {{item.description}}
+        </view>
+        <image 
+        src="{{item.image}}"
+        mode="aspectFill"/>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
